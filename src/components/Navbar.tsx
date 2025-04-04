@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -14,9 +13,9 @@ const Navbar = () => {
 
   const menuItems = [
     { label: 'Scholarships', href: '/scholarships' },
-    { label: 'Careers', href: '#careers' },
-    { label: 'Success Stories', href: '#stories' },
-    { label: 'Events', href: '#events' },
+    { label: 'Careers', href: '/careers' },
+    { label: 'Success Stories', href: '/success-stories' },
+    { label: 'Events', href: '/events' },
     { label: 'AI Assistant', href: '/ai-assistant' },
   ];
 
@@ -35,21 +34,12 @@ const Navbar = () => {
           <ul className="flex space-x-4">
             {menuItems.map((item, index) => (
               <li key={index}>
-                {item.href.startsWith('#') ? (
-                  <a 
-                    href={item.href} 
-                    className="px-3 py-2 text-gray-700 hover:text-limitless-purple transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <Link 
-                    to={item.href} 
-                    className="px-3 py-2 text-gray-700 hover:text-limitless-purple transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                )}
+                <Link 
+                  to={item.href} 
+                  className="px-3 py-2 text-gray-700 hover:text-limitless-purple transition-colors"
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -81,23 +71,13 @@ const Navbar = () => {
           <ul className="flex flex-col space-y-4">
             {menuItems.map((item, index) => (
               <li key={index}>
-                {item.href.startsWith('#') ? (
-                  <a 
-                    href={item.href} 
-                    className="block py-2 text-lg text-gray-700 hover:text-limitless-purple border-b border-gray-100"
-                    onClick={closeMenu}
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <Link 
-                    to={item.href} 
-                    className="block py-2 text-lg text-gray-700 hover:text-limitless-purple border-b border-gray-100"
-                    onClick={closeMenu}
-                  >
-                    {item.label}
-                  </Link>
-                )}
+                <Link 
+                  to={item.href} 
+                  className="block py-2 text-lg text-gray-700 hover:text-limitless-purple border-b border-gray-100"
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
             <li>
@@ -116,4 +96,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
