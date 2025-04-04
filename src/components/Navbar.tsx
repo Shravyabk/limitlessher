@@ -13,7 +13,7 @@ const Navbar = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   const menuItems = [
-    { label: 'Scholarships', href: '#scholarships' },
+    { label: 'Scholarships', href: '/scholarships' },
     { label: 'Careers', href: '#careers' },
     { label: 'Success Stories', href: '#stories' },
     { label: 'Events', href: '#events' },
@@ -116,3 +116,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
