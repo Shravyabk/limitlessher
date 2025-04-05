@@ -11,6 +11,8 @@ import Careers from "./pages/Careers";
 import SuccessStories from "./pages/SuccessStories";
 import Events from "./pages/Events";
 import NotFound from "./pages/NotFound";
+import Opportunities from "./pages/opportunities"; // ✅ Add this at top
+
 
 const queryClient = new QueryClient();
 
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/careers" element={<Careers />} />
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/opportunities" element={<Opportunities />} /> {/* ✅ Add this route */}
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
