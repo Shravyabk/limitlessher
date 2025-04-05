@@ -1,34 +1,20 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
-  const navigate = useNavigate();
-
-  const handleExploreClick = () => {
-    navigate('/opportunities'); // Replace with actual route
-  };
-
   return (
     <div className="relative overflow-hidden bg-black text-white">
-      {/* Background pattern */}
-      <div 
+      {/* Light blue SVG pattern */}
+      <div
         className="absolute inset-0 z-0 opacity-10"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300BFFF' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}
       ></div>
 
-      {/* Image at extreme right */}
-      <img 
-        src="https://images.app.goo.gl/rEm4UmfpHjS5CdW67" // 🔁 Replace with your image file path
-        alt="Inspiring girl"
-        className="hidden md:block absolute top-16 right-8 w-64 h-auto z-10"
-      />
-
       {/* Main content */}
       <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col md:flex-row items-center md:justify-between">
           
           {/* Left section */}
           <div className="md:w-1/2 mb-10 md:mb-0">
@@ -43,14 +29,14 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button 
-                onClick={handleExploreClick}
+              <Button
                 className="bg-sky-500 hover:bg-sky-600 text-white py-6 px-8 text-lg"
+                onClick={() => window.location.href = '/scholarships'}
               >
                 Explore Opportunities
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 className="border-sky-300 text-sky-300 hover:bg-sky-300/10 py-6 px-8 text-lg"
               >
                 Join Our Community
@@ -58,17 +44,13 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right section with main image (can be removed if only using extreme-right image) */}
-          <div className="md:w-1/2 flex justify-center">
-            <div className="relative w-full max-w-md">
-              <img 
-                src="/lovable-uploads/557fd5ec-1868-4b23-811e-803cbc422a94.png" 
-                alt="Girls in STEM" 
-                className="relative z-10 rounded-lg shadow-xl"
-              />
-            </div>
+          {/* Right image section */}
+          <div className="md:w-1/2 flex justify-center items-center">
+            <img
+              src="https://media.istockphoto.com/id/1319826664/vector/a-super-hero-shadow-leadership-motivation-concept.jpg?s=612x612&w=0&k=20&c=IXyoCV41KqvqX4Z75plprixsrkLRtUuxhC6A6u-iR8E="
+              className="w-80 h-auto object-cover rounded-xl shadow-lg"
+            />
           </div>
-
         </div>
       </div>
     </div>
