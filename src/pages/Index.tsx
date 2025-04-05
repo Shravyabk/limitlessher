@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -48,20 +47,20 @@ const Index = () => {
         <SuccessStory />
         
         {/* Events Section */}
-        <section className="section-padding bg-gray-50" id="events">
+        <section className="section-padding bg-gray-900" id="events">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Upcoming <span className="text-limitless-purple">Events</span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
                 Join our virtual workshops, hackathons, and networking events to enhance your skills and connect with the community.
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {upcomingEvents.map((event) => (
-                <div key={event.id} className="bg-white rounded-xl overflow-hidden shadow-md feature-card-hover">
+                <div key={event.id} className="bg-gray-800 rounded-xl overflow-hidden shadow-md feature-card-hover">
                   <div className="h-48 overflow-hidden">
                     <img 
                       src={event.image} 
@@ -74,8 +73,8 @@ const Index = () => {
                       <Calendar size={18} className="mr-2" />
                       <span>{event.date}</span>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-                    <p className="text-gray-600 mb-4">{event.description}</p>
+                    <h3 className="text-xl font-semibold mb-2 text-white">{event.title}</h3>
+                    <p className="text-gray-400 mb-4">{event.description}</p>
                     <div className="flex justify-between items-center">
                       <div className="flex items-center text-sm text-gray-500">
                         <Users size={16} className="mr-1" />
