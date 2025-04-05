@@ -15,6 +15,7 @@ const Navbar = () => {
     { label: 'Careers', path: '/careers' },
     { label: 'Success Stories', path: '/success-stories' },
     { label: 'Events', path: '/events' },
+    { label: 'Hackathons', path: '/hackathons' }, // ✅ New Route
   ];
 
   return (
