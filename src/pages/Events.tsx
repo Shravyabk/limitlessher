@@ -8,6 +8,7 @@ const Events = () => {
       <Navbar />
       <main className="flex-grow py-12">
         <div className="container mx-auto px-4">
+          {/* Heading Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold mb-4">
               <span className="text-sky-400">Upcoming</span> Events
@@ -17,7 +18,7 @@ const Events = () => {
             </p>
           </div>
 
-          {/* TODO: Add event listings */}
+          {/* Placeholder for Future Events */}
           <div className="text-center py-16">
             <p className="text-xl text-gray-500">
               Event calendar and details coming soon!
