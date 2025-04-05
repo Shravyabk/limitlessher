@@ -8,23 +8,24 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  
   const closeMenu = () => setIsMenuOpen(false);
 
   const menuItems = [
     { label: 'Scholarships', href: '#scholarships' },
-    { label: 'Careers', href: '#scholarships' },
+    { label: 'Careers', href: '#careers' },
     { label: 'Success Stories', href: '#success-stories' },
     { label: 'Events', href: '#events' },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+    <nav className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md shadow-sm text-white">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        
+        {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="text-2xl font-heading font-bold">
-            <span className="text-limitless-purple">Limitless</span>
-            <span className="text-limitless-pink">Her</span>
+            <span className="text-limitless-purple drop-shadow-md">Limitless</span>
+            <span className="text-limitless-pink drop-shadow-md">Her</span>
           </Link>
         </div>
 
@@ -35,7 +36,7 @@ const Navbar = () => {
               <li key={index}>
                 <a 
                   href={item.href} 
-                  className="px-3 py-2 text-gray-700 hover:text-limitless-purple transition-colors"
+                  className="px-3 py-2 text-gray-300 hover:text-limitless-purple transition-colors"
                 >
                   {item.label}
                 </a>
@@ -51,7 +52,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <button 
             onClick={toggleMenu}
-            className="text-gray-700 focus:outline-none"
+            className="text-gray-200 focus:outline-none"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -62,7 +63,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div 
         className={cn(
-          "fixed inset-0 z-40 bg-white pt-16 transform transition-transform duration-300 ease-in-out md:hidden",
+          "fixed inset-0 z-40 bg-gray-900 pt-16 text-white transform transition-transform duration-300 ease-in-out md:hidden",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -72,7 +73,7 @@ const Navbar = () => {
               <li key={index}>
                 <a 
                   href={item.href} 
-                  className="block py-2 text-lg text-gray-700 hover:text-limitless-purple border-b border-gray-100"
+                  className="block py-2 text-lg text-gray-200 hover:text-limitless-purple border-b border-gray-700"
                   onClick={closeMenu}
                 >
                   {item.label}

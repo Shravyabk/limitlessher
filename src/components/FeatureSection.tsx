@@ -57,13 +57,13 @@ const FeatureSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-gray-50" id="features">
+    <section className="section-padding bg-zinc-950 text-white" id="features">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Key Features of <span className="text-limitless-purple">LimitlessHer</span>
+            Key Features of <span className="text-teal-400">LimitlessHer</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-zinc-400 max-w-3xl mx-auto">
             Our platform offers comprehensive resources and tools designed to support girls and women at every stage of their STEM journey.
           </p>
         </div>
