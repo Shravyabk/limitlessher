@@ -11,16 +11,16 @@ const Navbar = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   const menuItems = [
-    { label: 'Scholarships', href: '#scholarships' },
-    { label: 'Careers', href: '#careers' },
-    { label: 'Success Stories', href: '#success-stories' },
-    { label: 'Events', href: '#events' },
+    { label: 'Scholarships', path: '/scholarships' },
+    { label: 'Careers', path: '/careers' },
+    { label: 'Success Stories', path: '/success-stories' },
+    { label: 'Events', path: '/events' },
   ];
 
   return (
     <nav className="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md shadow-sm text-white">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        
+
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="text-2xl font-heading font-bold">
@@ -34,12 +34,12 @@ const Navbar = () => {
           <ul className="flex space-x-4">
             {menuItems.map((item, index) => (
               <li key={index}>
-                <a 
-                  href={item.href} 
+                <Link
+                  to={item.path}
                   className="px-3 py-2 text-gray-300 hover:text-limitless-purple transition-colors"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -50,7 +50,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button 
+          <button
             onClick={toggleMenu}
             className="text-gray-200 focus:outline-none"
             aria-label="Toggle menu"
@@ -61,7 +61,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div 
+      <div
         className={cn(
           "fixed inset-0 z-40 bg-gray-900 pt-16 text-white transform transition-transform duration-300 ease-in-out md:hidden",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -71,17 +71,17 @@ const Navbar = () => {
           <ul className="flex flex-col space-y-4">
             {menuItems.map((item, index) => (
               <li key={index}>
-                <a 
-                  href={item.href} 
+                <Link
+                  to={item.path}
                   className="block py-2 text-lg text-gray-200 hover:text-limitless-purple border-b border-gray-700"
                   onClick={closeMenu}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
-              <Button 
+              <Button
                 className="w-full mt-4 bg-limitless-purple hover:bg-limitless-purple/90 text-white"
                 onClick={closeMenu}
               >
