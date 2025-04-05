@@ -2,16 +2,19 @@ import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  
+  const closeMenu = () => setIsMenuOpen(false);
 
   const menuItems = [
     { label: 'Scholarships', href: '#scholarships' },
     { label: 'Careers', href: '#careers' },
-    { label: 'Success Stories', href: '#success-stories' },
+    { label: 'Success Stories', href: '#stories' },
     { label: 'Events', href: '#events' },
   ];
 
@@ -19,10 +22,10 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="text-2xl font-heading font-bold">
+          <Link to="/" className="text-2xl font-heading font-bold">
             <span className="text-limitless-purple">Limitless</span>
             <span className="text-limitless-pink">Her</span>
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Menu */}
@@ -30,12 +33,12 @@ const Navbar = () => {
           <ul className="flex space-x-4">
             {menuItems.map((item, index) => (
               <li key={index}>
-                <a 
-                  href={item.href} 
+                <Link 
+                  to={item.href} 
                   className="px-3 py-2 text-gray-700 hover:text-limitless-purple transition-colors"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -59,7 +62,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div 
         className={cn(
-          "fixed inset-0 z-40 bg-white pt-16 transform transition-transform duration-300 ease-in-out",
+          "fixed inset-0 z-40 bg-white pt-16 transform transition-transform duration-300 ease-in-out md:hidden",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -67,17 +70,20 @@ const Navbar = () => {
           <ul className="flex flex-col space-y-4">
             {menuItems.map((item, index) => (
               <li key={index}>
-                <a 
-                  href={item.href} 
+                <Link 
+                  to={item.href} 
                   className="block py-2 text-lg text-gray-700 hover:text-limitless-purple border-b border-gray-100"
-                  onClick={toggleMenu}
+                  onClick={closeMenu}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
-              <Button className="w-full mt-4 bg-limitless-purple hover:bg-limitless-purple/90 text-white">
+              <Button 
+                className="w-full mt-4 bg-limitless-purple hover:bg-limitless-purple/90 text-white"
+                onClick={closeMenu}
+              >
                 Join Us
               </Button>
             </li>
