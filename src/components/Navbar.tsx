@@ -13,8 +13,8 @@ const Navbar = () => {
 
   const menuItems = [
     { label: 'Scholarships', href: '#scholarships' },
-    { label: 'Careers', href: '#careers' },
-    { label: 'Success Stories', href: '#stories' },
+    { label: 'Careers', href: '#scholarships' },
+    { label: 'Success Stories', href: '#success-stories' },
     { label: 'Events', href: '#events' },
   ];
 
@@ -33,12 +33,12 @@ const Navbar = () => {
           <ul className="flex space-x-4">
             {menuItems.map((item, index) => (
               <li key={index}>
-                <Link 
-                  to={item.href} 
+                <a 
+                  href={item.href} 
                   className="px-3 py-2 text-gray-700 hover:text-limitless-purple transition-colors"
                 >
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
@@ -70,13 +70,13 @@ const Navbar = () => {
           <ul className="flex flex-col space-y-4">
             {menuItems.map((item, index) => (
               <li key={index}>
-                <Link 
-                  to={item.href} 
+                <a 
+                  href={item.href} 
                   className="block py-2 text-lg text-gray-700 hover:text-limitless-purple border-b border-gray-100"
                   onClick={closeMenu}
                 >
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
             <li>
