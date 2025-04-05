@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -12,7 +11,7 @@ const Navbar = () => {
   const menuItems = [
     { label: 'Scholarships', href: '#scholarships' },
     { label: 'Careers', href: '#careers' },
-    { label: 'Success Stories', href: '#stories' },
+    { label: 'Success Stories', href: '#success-stories' },
     { label: 'Events', href: '#events' },
   ];
 
