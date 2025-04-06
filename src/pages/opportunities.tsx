@@ -1,11 +1,14 @@
+import React from 'react';
+
 const Opportunities = () => {
-    return (
-      <div className="min-h-screen bg-black text-white p-12">
-        <h1 className="text-4xl font-bold text-sky-400">Opportunities Page</h1>
-        <p className="text-gray-300 mt-4">Here you’ll find scholarships, programs, and coding events!</p>
-      </div>
-    );
-  };
-  
-  export default Opportunities;
-  
+  return (
+    <div className="min-h-screen bg-black text-white p-10 text-center">
+      <h1 className="text-4xl font-bold text-sky-300 mb-6">Explore Opportunities</h1>
+      <p className="text-lg text-gray-300">
+        Here's where you can discover scholarships, internships, workshops, and more to boost your STEM journey 🚀
+      </p>
+    </div>
+  );
+};
+
+export default Opportunities;
