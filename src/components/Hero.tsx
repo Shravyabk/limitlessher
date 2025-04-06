@@ -35,11 +35,12 @@ const Hero = () => {
               >
                 Explore Opportunities
               </Button>
-              <Button
+              <Button 
+                onClick={() => window.location.href = 'https://discord.com/channels/1358322784039731262/1358322784039731264'}
                 variant="outline"
                 className="border-sky-300 text-sky-300 hover:bg-sky-300/10 py-6 px-8 text-lg"
               >
-                Join Our Community
+                Join Our Community 
               </Button>
             </div>
           </div>
