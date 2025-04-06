@@ -1,8 +1,10 @@
+// src/App.tsx
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Index from "./pages/Index";
 import AiAssistant from "./pages/AiAssistant";
 import Scholarships from "./pages/Scholarships";
@@ -10,9 +12,8 @@ import Careers from "./pages/Careers";
 import SuccessStories from "./pages/SuccessStories";
 import Events from "./pages/Events";
 import Hackathon from "./pages/Hackathon";
+import Opportunities from "./pages/opportunities";
 import NotFound from "./pages/NotFound";
-import Opportunities from "./pages/opportunities"; // ✅ Add this at top
-
 
 const queryClient = new QueryClient();
 
@@ -29,13 +30,8 @@ const App = () => (
           <Route path="/careers" element={<Careers />} />
           <Route path="/success-stories" element={<SuccessStories />} />
           <Route path="/events" element={<Events />} />
-<<<<<<< HEAD
           <Route path="/hackathons" element={<Hackathon />} />
-=======
-          <Route path="/opportunities" element={<Opportunities />} /> {/* ✅ Add this route */}
-
->>>>>>> 7d0fa065ae10e649c84757e1759580778b0c98e5
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/opportunities" element={<Opportunities />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
