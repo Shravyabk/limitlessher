@@ -26,14 +26,14 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-black text-white">
       <Navbar />
       <main className="flex-grow">
         <Hero />
         <FeatureSection />
-        
+
         {/* Mission Statement Section */}
-        <section className="section-padding bg-limitless-purple text-white">
+        <section className="section-padding bg-gray-900 text-blue-300">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Mission</h2>
             <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed">
@@ -43,21 +43,21 @@ const Index = () => {
             </p>
           </div>
         </section>
-        
+
         <SuccessStory />
-        
+
         {/* Events Section */}
-        <section className="section-padding bg-gray-900" id="events">
+        <section className="section-padding bg-black" id="events">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                Upcoming <span className="text-limitless-purple">Events</span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-blue-300">
+                Upcoming <span className="text-blue-400">Events</span>
               </h2>
               <p className="text-lg text-gray-400 max-w-3xl mx-auto">
                 Join our virtual workshops, hackathons, and networking events to enhance your skills and connect with the community.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {upcomingEvents.map((event) => (
                 <div key={event.id} className="bg-gray-800 rounded-xl overflow-hidden shadow-md feature-card-hover">
@@ -69,18 +69,18 @@ const Index = () => {
                     />
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center text-limitless-purple mb-2">
+                    <div className="flex items-center text-blue-400 mb-2">
                       <Calendar size={18} className="mr-2" />
                       <span>{event.date}</span>
                     </div>
                     <h3 className="text-xl font-semibold mb-2 text-white">{event.title}</h3>
-                    <p className="text-gray-400 mb-4">{event.description}</p>
+                    <p className="text-gray-300 mb-4">{event.description}</p>
                     <div className="flex justify-between items-center">
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center text-sm text-gray-400">
                         <Users size={16} className="mr-1" />
                         <span>Limited spots</span>
                       </div>
-                      <Button className="bg-limitless-teal hover:bg-limitless-teal/90">
+                      <Button className="bg-blue-500 hover:bg-blue-600 text-white">
                         Register
                       </Button>
                     </div>
@@ -88,23 +88,23 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            
+
             <div className="mt-10 text-center">
-              <Button variant="outline" className="border-limitless-purple text-limitless-purple hover:bg-limitless-lavender">
+              <Button variant="outline" className="border-blue-400 text-blue-400 hover:bg-blue-400/10">
                 View All Events <ArrowRight size={16} className="ml-2" />
               </Button>
             </div>
           </div>
         </section>
-        
+
         {/* CTA Section */}
-        <section className="section-padding bg-gradient-to-r from-limitless-purple to-limitless-pink text-white">
+        <section className="section-padding bg-gradient-to-r from-gray-900 to-gray-800 text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Journey?</h2>
-            <p className="text-xl max-w-3xl mx-auto mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-blue-300">Ready to Start Your Journey?</h2>
+            <p className="text-xl max-w-3xl mx-auto mb-8 text-gray-300">
               Join our community of ambitious women in STEM and access exclusive opportunities to grow your career.
             </p>
-            <Button className="bg-white text-limitless-purple hover:bg-gray-100 px-8 py-6 text-lg">
+            <Button className="bg-blue-500 text-white hover:bg-blue-600 px-8 py-6 text-lg">
               Join LimitlessHer Today
             </Button>
           </div>
