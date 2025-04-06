@@ -1,8 +1,6 @@
-// src/pages/Careers.tsx
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { sendPromptToGemini } from '@/components/Gemini'; // ✅ Import the helper function
 
 const Careers = () => {
   const [userInput, setUserInput] = useState('');
@@ -12,17 +10,27 @@ const Careers = () => {
   const handleSend = async () => {
     if (!userInput.trim()) return;
 
-    setChatLog((prev) => [...prev, { type: 'user', text: userInput }]);
+    const messageToSend = userInput;
+    setChatLog((prev) => [...prev, { type: 'user', text: messageToSend }]);
+    setUserInput('');
     setLoading(true);
 
     try {
-      const botResponse = await sendPromptToGemini(userInput);
-      setChatLog((prev) => [...prev, { type: 'bot', text: botResponse }]);
-    } catch (error) {
+      const res = await fetch('http://localhost:5000/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: messageToSend }),
+      });
+
+      const data = await res.json();
+
+      setChatLog((prev) => [...prev, { type: 'bot', text: data.response }]);
+    } catch (err) {
       setChatLog((prev) => [...prev, { type: 'bot', text: 'Oops! Something went wrong.' }]);
     }
 
-    setUserInput('');
     setLoading(false);
   };
 
@@ -32,7 +40,7 @@ const Careers = () => {
         <h1 className="text-3xl font-bold mb-6 text-center">Ask Our Career Bot 🤖</h1>
 
         {/* Chat Section */}
-        <div className="bg-gray-800 rounded-xl p-4 h-[500px] overflow-y-auto space-y-3 shadow-md">
+        <div className="bg-gray-800 rounded-xl p-4 h-[500px] overflow-y-auto space-y-3 shadow-md flex flex-col">
           {chatLog.map((msg, idx) => (
             <div
               key={idx}
@@ -45,7 +53,7 @@ const Careers = () => {
               {msg.text}
             </div>
           ))}
-          {loading && <p className="text-gray-400">Bot is typing...</p>}
+          {loading && <p className="text-gray-400 self-start">Bot is typing...</p>}
         </div>
 
         {/* Input + Send */}
@@ -55,6 +63,7 @@ const Careers = () => {
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
             className="flex-1 bg-gray-700 text-white"
+            onKeyDown={(e) => e.key === 'Enter' && handleSend()}
           />
           <Button
             className="bg-limitless-pink hover:bg-limitless-pink/90"
