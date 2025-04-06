@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import GeminiChat from '@/components/GeminiChat';
+import { GeminiChat } from '@/components/Gemini';
 
 const AiAssistant = () => {
   return (
