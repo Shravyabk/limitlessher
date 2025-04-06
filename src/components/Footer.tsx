@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Twitter, Linkedin, Facebook, Mail, ArrowRight } from 'lucide-react';
+import { Github, Twitter, Linkedin, Facebook, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -28,6 +28,14 @@ const Footer = () => {
               </a>
               <a href="#" className="text-zinc-400 hover:text-teal-400 transition-colors">
                 <Facebook size={20} />
+              </a>
+              <a
+                href="https://discord.com/channels/1358322784039731262/1358322784039731264 "
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-teal-400 transition-colors underline text-sm mt-1"
+              >
+                Discord
               </a>
             </div>
           </div>
