@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { GeminiChat } from '@/components/Gemini';
+
 
 const AiAssistant = () => {
   return (
@@ -15,7 +15,7 @@ const AiAssistant = () => {
           <p className="text-center text-gray-400 max-w-3xl mx-auto mb-10">
             Get personalized scholarship recommendations, career advice, and coding help from our AI assistant powered by Google's Gemini.
           </p>
-          <GeminiChat />
+        
         </div>
       </main>
       <Footer />
