@@ -12,4 +12,4 @@
 - 🧑‍💼 Mentorship and community support
 - 🌐 Modern, responsive user interface
 - 🖼 Image-driven, motivational content
-- Hackathons web 
+- Hackathon web 
